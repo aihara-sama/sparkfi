@@ -95,6 +95,7 @@ const components: ThemeOptions["components"] = {
   },
   MuiTypography: {
     defaultProps: {
+      color: "#fff",
       variantMapping: {
         h1: "h1",
         h2: "h2",
@@ -180,7 +181,7 @@ const zIndex: ThemeOptions["zIndex"] = {
 };
 
 const typography: ThemeOptions["typography"] = {
-  fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
   h1: {
     fontSize: 48,
     fontWeight: 800,

@@ -2,7 +2,7 @@ import type { PaletteOptions, ThemeOptions } from "@mui/material";
 
 const background: PaletteOptions["background"] = {
   paper: "#fff",
-  default: "#fff",
+  default: "#0C0E1E",
 };
 
 const text: PaletteOptions["text"] = {

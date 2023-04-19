@@ -1,5 +1,5 @@
-import { Box, Button } from "@mui/material";
-import { Logo } from "components/common/Logo";
+import { Box } from "@mui/material";
+import FancyButton from "components/common/FancyButton";
 import Link from "next/link";
 
 export const Header = () => {
@@ -12,23 +12,13 @@ export const Header = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        borderBottom: "1px solid",
-        borderColor: "divider",
-        position: "sticky",
-        top: 0,
-        left: 0,
-        zIndex: "appBar",
         bgcolor: "background.default",
       }}
     >
       <Link href="/">
-        <Logo />
+        <img src="/images/logo.svg" alt="logo" />
       </Link>
-      <Box>
-        <Button variant="text" component={Link} href="/login">
-          Login
-        </Button>
-      </Box>
+      <FancyButton>Launch App</FancyButton>
     </Box>
   );
 };
