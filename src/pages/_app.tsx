@@ -3,10 +3,8 @@ import { CacheProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { Meta } from "components/common/Meta";
 import { Toaster } from "components/common/Toaster";
 import { ThemeProvider } from "contexts/theme";
-import { appWithTranslation } from "next-i18next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Router } from "next/router";
@@ -33,10 +31,9 @@ function MyApp(props: MyAppProps) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>Example</title>
+        <title>SparkFI</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <Meta />
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           {() => (
@@ -54,4 +51,4 @@ function MyApp(props: MyAppProps) {
   );
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;
