@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import Logo from "components/common/Logo";
 import DiscordIcon from "components/icons/social/DiscordIcon";
 import GitbookIcon from "components/icons/social/GitbookIcon";
 import GithubIcon from "components/icons/social/GithubIcon";
@@ -19,9 +20,7 @@ const Footer: FunctionComponent = () => {
       pb="116px"
       gap="32px"
     >
-      <Box>
-        <img src="/images/logo.svg" alt="logo" />
-      </Box>
+      <Logo />
       <Box display="flex" gap="32px">
         <TwitterIcon />
         <TelegramIcon />

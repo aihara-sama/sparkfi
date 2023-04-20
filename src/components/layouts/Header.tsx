@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import FancyButton from "components/common/FancyButton";
-import Link from "next/link";
+import Logo from "components/common/Logo";
 
 export const Header = () => {
   return (
@@ -15,9 +15,7 @@ export const Header = () => {
         bgcolor: "background.default",
       }}
     >
-      <Link href="/">
-        <img src="/images/logo.svg" alt="logo" />
-      </Link>
+      <Logo />
       <FancyButton>Launch App</FancyButton>
     </Box>
   );

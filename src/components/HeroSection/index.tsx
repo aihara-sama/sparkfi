@@ -17,7 +17,7 @@ const HeroSection: FunctionComponent = () => {
           fontSize={40}
           sx={{
             background:
-              "-webkit-linear-gradient(90deg, rgb(97, 0, 255) 0%, rgb(244, 12, 193) 100%);",
+              "url(https://cdn.discordapp.com/attachments/1098112509661155368/1098495199287722034/Custom_dimensions_500x500_px_2.gif)",
             "-webkit-background-clip": "text",
             "-webkit-text-fill-color": "transparent",
           }}
@@ -52,7 +52,7 @@ const HeroSection: FunctionComponent = () => {
             borderRadius: "50%",
           }}
         ></Box>
-        <img src="/images/racket.svg" alt="racket" />
+        <img src="/images/racket.gif" alt="racket" />
       </Box>
     </Box>
   );
