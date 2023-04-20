@@ -118,10 +118,10 @@ const FancyAccordion: React.FunctionComponent<{ menu: IMenuItem[] }> = ({
               aria-controls="panel1d-content"
               id="panel1d-header"
             >
-              <Typography>{item.text}</Typography>
+              <Typography fontWeight={500}>{item.text}</Typography>
             </AccordionSummary>
             <AccordionDetails sx={{ backgroundColor: "background.default" }}>
-              <Typography>{item.body}</Typography>
+              <Typography fontWeight={500}>{item.body}</Typography>
             </AccordionDetails>
           </Accordion>
         ))}

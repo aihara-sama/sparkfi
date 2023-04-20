@@ -9,35 +9,35 @@ interface IMenuItem {
 const menu: IMenuItem[] = [
   {
     text: "What is SparkFi?",
-    body: "SparkFi is a decentralized finance protocol that allows users to earn interest on their crypto assets.",
+    body: "SparkFi  is a launchpad platform built on the Base blockchain, designed to support new blockchain projects in a decentralized manner.",
   },
   {
     text: "What kind of projects can we expect to see launch on SparkFi?",
-    body: "SparkFi is a decentralized finance protocol that allows users to earn interest on their crypto assets.",
+    body: "We only select the best of the best projects. Projects to look out for focused on blockchain games, NFTs, metaverse, DeFi, and other recent developments in the blockchain space.",
   },
   {
     text: "How to participate in IDO?",
-    body: "SparkFi is a decentralized finance protocol that allows users to earn interest on their crypto assets.",
+    body: "Buy and stake SPAK or SPAK-LP tokens to gain IDOs allocation and wait for IDO pools to open. When the pool is open, participate by depositing a min amount of desired token allocation you want to purchase in ETH.",
   },
   {
     text: "Is SparkFi multichain?",
-    body: "SparkFi is a decentralized finance protocol that allows users to earn interest on their crypto assets.",
+    body: "Currently, it is only on BASE. Other chains will be added gradually to make SparkFi a multichain launchpad.",
   },
   {
     text: "When can we claim the IDO tokens?",
-    body: "SparkFi is a decentralized finance protocol that allows users to earn interest on their crypto assets.",
+    body: "Token unlock/claim will be as per the vesting schedule of the project.",
   },
   {
     text: "Why Base?",
-    body: "SparkFi is a decentralized finance protocol that allows users to earn interest on their crypto assets.",
+    body: "Base offer a secure, low-cost, flexible and developer-friendly Ethereum L2 blockchain platform that support a wide range of use cases, from gaming and entertainment to finance and commerce.",
   },
   {
     text: "Will there be a token? Where can I learn about it if so.",
-    body: "SparkFi is a decentralized finance protocol that allows users to earn interest on their crypto assets.",
+    body: "The token is expected to launch in Q2-Q3 of 2023.",
   },
   {
     text: "How can I contact the team?",
-    body: "SparkFi is a decentralized finance protocol that allows users to earn interest on their crypto assets.",
+    body: "You can get intouch with the team via all our social handles.",
   },
 ];
 
@@ -53,9 +53,7 @@ const FAQ: FunctionComponent = () => {
           Frequently Asked Questions
         </Typography>
       </Box>
-      <Box>
-        <FancyAccordion menu={menu} />
-      </Box>
+      <FancyAccordion menu={menu} />
     </Box>
   );
 };
