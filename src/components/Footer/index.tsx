@@ -22,12 +22,35 @@ const Footer: FunctionComponent = () => {
     >
       <Logo />
       <Box display="flex" gap="32px">
-        <TwitterIcon />
-        <TelegramIcon />
+        <a
+          target="_blank"
+          href="https://twitter.com/sparkfi_xyz"
+          rel="noreferrer"
+        >
+          <TwitterIcon />
+        </a>
+        <a target="_blank" href="https://t.me/sparkfi_xyz" rel="noreferrer">
+          <TelegramIcon />
+        </a>
+        <a
+          target="_blank"
+          href="https://github.com/SparkFi-Labs"
+          rel="noreferrer"
+        >
+          <GithubIcon />
+        </a>
+        <a target="_blank" href="https://docs.sparkfi.xyz" rel="noreferrer">
+          <GitbookIcon />
+        </a>
+        <a
+          target="_blank"
+          href="https://sparkfi-xyz.medium.com"
+          rel="noreferrer"
+        >
+          <MediumIcon />
+        </a>
+
         <DiscordIcon />
-        <GithubIcon />
-        <GitbookIcon />
-        <MediumIcon />
       </Box>
       <Typography fontWeight={500}>
         Copyright © 2023 SparkFi. All rights reserved.
