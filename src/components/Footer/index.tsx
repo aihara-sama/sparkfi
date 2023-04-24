@@ -49,8 +49,13 @@ const Footer: FunctionComponent = () => {
         >
           <MediumIcon />
         </a>
-
-        <DiscordIcon />
+        <a
+          target="_blank"
+          href="https://discord.com/invite/WtBvqvuaTu"
+          rel="noreferrer"
+        >
+          <DiscordIcon />
+        </a>
       </Box>
       <Typography fontWeight={500}>
         Copyright © 2023 SparkFi. All rights reserved.
