@@ -1,58 +1,86 @@
-import { Box, Typography } from "@mui/material";
-import FancyButton from "components/common/FancyButton";
+import { Box, Button, Typography } from "@mui/material";
 import type { FunctionComponent } from "react";
 
 const HeroSection: FunctionComponent = () => {
   return (
     <Box
-      display="flex"
-      gap={{ xs: "82px", sm: 5 }}
-      mt="144px"
-      alignItems="center"
-      flexDirection={{ xs: "column", md: "row" }}
+      sx={
+        {
+          // backgroundImage: `url(/images/hero.svg)`,
+          // backgroundRepeat: "no-repeat",
+        }
+      }
     >
-      <Box>
-        <Typography fontSize={40}>Built to Launch</Typography>
-        <Typography
-          fontSize={40}
-          sx={{
-            background:
-              "url(https://cdn.discordapp.com/attachments/1098112509661155368/1098495199287722034/Custom_dimensions_500x500_px_2.gif)",
-            "-webkit-background-clip": "text",
-            "-webkit-text-fill-color": "transparent",
-          }}
-          fontWeight={500}
-        >
-          Premier Projects on BASE
-        </Typography>
-        <Typography mt="39px" mb="56px" fontWeight={500}>
-          Participate in the very early stage of projects building on one of the
-          world’s highest performance blockchains-BASE.
-        </Typography>
-        <FancyButton
-          buttonStyles={{
-            px: "22px",
-          }}
-        >
-          Join Whitelist
-        </FancyButton>
+      <Box
+        component="img"
+        src="/images/hero.svg"
+        sx={{
+          position: "absolute",
+          top: { xs: 100, md: 0 },
+          left: 0,
+          right: 0,
+          width: "100%",
+          zIndex: -1,
+          maxHeight: "1500px",
+        }}
+      ></Box>
+
+      <Box
+        display="flex"
+        gap={{ xs: "82px", sm: 5 }}
+        mt={{ xs: "92px", sm: "144px" }}
+        alignItems="center"
+        flexDirection={{ xs: "column", md: "row" }}
+        // mb={90}
+      >
+        <Box flex={1}>
+          <Typography
+            textAlign="center"
+            fontSize={{ xs: 35, md: 70 }}
+            sx={{
+              background:
+                "linear-gradient(87.58deg, #6100FF 2.97%, #FFF95E 47.72%)",
+              "-webkit-background-clip": "text",
+              "-webkit-text-fill-color": "transparent",
+              "background-clip": "text",
+              "text-fill-color": "transparent",
+            }}
+            fontWeight={500}
+          >
+            Your Gateway Into
+          </Typography>
+          <Typography
+            textAlign="center"
+            fontSize={{ xs: 35, md: 70 }}
+            sx={{
+              background:
+                "linear-gradient(87.58deg, #6100FF 2.97%, #FFF95E 47.72%)",
+              "-webkit-background-clip": "text",
+              "-webkit-text-fill-color": "transparent",
+              "background-clip": "text",
+              "text-fill-color": "transparent",
+            }}
+            fontWeight={500}
+          >
+            the Base
+          </Typography>
+        </Box>
       </Box>
-      <Box position="relative" mr={{ xs: 0, sm: 3, md: 0 }}>
-        <Box
-          position="absolute"
+      <Box display="flex" justifyContent="center" mt={{ xs: "33%", xl: "59%" }}>
+        <Button
+          variant="contained"
           sx={{
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: -1,
-            filter: "blur(74px)",
-            background:
-              "linear-gradient(138deg, rgb(97 0 255), rgb(244 12 193))",
-            borderRadius: "50%",
+            background: "#FFF95E !important",
+            color: "black !important",
+            py: "35px",
+            px: { xs: "100px", sm: "162px" },
+            fontSize: "20px",
+            fontWeight: 500,
+            width: { xs: "100%", sm: "inherit" },
           }}
-        ></Box>
-        <img src="/images/racket.gif" alt="racket" />
+        >
+          Launch App
+        </Button>
       </Box>
     </Box>
   );

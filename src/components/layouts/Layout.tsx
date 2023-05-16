@@ -6,8 +6,15 @@ import { Header } from "./Header";
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <Box>
-      <Container maxWidth="xl" sx={{ mt: "26px" }}>
+    <Box
+      sx={
+        {
+          // backgroundImage: `url(/images/hero.svg)`,
+          // backgroundRepeat: "no-repeat",
+        }
+      }
+    >
+      <Container maxWidth="xl" sx={{ pt: "26px" }}>
         <Header />
         {/* <Box
           maxWidth="1300px"

@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
-import Abilities from "components/Abilities";
-import About from "components/About";
+import ApplyForLaunch from "components/ApplyForLaunch";
 import FAQ from "components/FAQ";
+import Features from "components/Features";
 import HeroSection from "components/HeroSection";
-import Participate from "components/Participate";
+
 import { Layout } from "components/layouts/Layout";
 
 const Index = () => {
@@ -11,10 +11,12 @@ const Index = () => {
     <Layout>
       <Box>
         <HeroSection />
-        <About />
-        <Abilities />
-        <Participate />
+        <Features />
+        {/* <About /> */}
+        {/* <Abilities /> */}
+        {/* <Participate /> */}
         <FAQ />
+        <ApplyForLaunch />
       </Box>
     </Layout>
   );

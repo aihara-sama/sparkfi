@@ -12,7 +12,6 @@ export const Header = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        bgcolor: "background.default",
       }}
     >
       <Logo />
