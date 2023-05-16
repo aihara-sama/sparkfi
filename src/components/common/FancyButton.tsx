@@ -5,11 +5,13 @@ import type { FunctionComponent } from "react";
 interface IFancyButtonProps {
   children: string | JSX.Element;
   buttonStyles?: SxProps;
+  expanded?: boolean;
 }
 
 const FancyButton: FunctionComponent<IFancyButtonProps> = ({
   children,
   buttonStyles,
+  expanded = false,
 }) => {
   return (
     <Box display="flex">
@@ -27,7 +29,7 @@ const FancyButton: FunctionComponent<IFancyButtonProps> = ({
             borderRadius: 0,
             border: "none",
             py: "10px",
-            px: "20px",
+            px: expanded ? "20px" : "10px",
             color: "#fff",
             fontSize: 16,
             lineHeight: 1,

@@ -25,8 +25,10 @@ export const Header = () => {
           </Typography>
         )}
       </Box>
-      {router.asPath === "/" && <FancyButton>Launch App</FancyButton>}
-      {router.asPath !== "/" && <FancyButton>Connect Wallet</FancyButton>}
+      {router.asPath === "/" && <FancyButton expanded>Launch App</FancyButton>}
+      {router.asPath !== "/" && (
+        <FancyButton expanded>Connect Wallet</FancyButton>
+      )}
     </Box>
   );
 };
