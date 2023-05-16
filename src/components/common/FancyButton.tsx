@@ -16,7 +16,7 @@ const FancyButton: FunctionComponent<IFancyButtonProps> = ({
       <Box
         sx={{
           background:
-            "linear-gradient(90deg, rgb(97, 0, 255) 0%, rgb(244, 12, 193) 100%)",
+            "linear-gradient(90deg, rgb(97, 0, 255) 0%, rgb(255, 249, 94) 100%)",
         }}
         p="1px"
       >
