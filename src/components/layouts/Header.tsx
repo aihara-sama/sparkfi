@@ -1,8 +1,11 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import FancyButton from "components/common/FancyButton";
 import Logo from "components/common/Logo";
+import { useRouter } from "next/router";
 
 export const Header = () => {
+  const router = useRouter();
+
   return (
     <Box
       component="header"
@@ -14,8 +17,16 @@ export const Header = () => {
         justifyContent: "space-between",
       }}
     >
-      <Logo />
-      <FancyButton>Launch App</FancyButton>
+      <Box display="flex" alignItems="center">
+        <Logo />
+        {router.asPath !== "/" && (
+          <Typography ml={{ xs: "20px", md: "110px", fontWeight: "bold" }}>
+            Swap
+          </Typography>
+        )}
+      </Box>
+      {router.asPath === "/" && <FancyButton>Launch App</FancyButton>}
+      {router.asPath !== "/" && <FancyButton>Connect Wallet</FancyButton>}
     </Box>
   );
 };

@@ -2,27 +2,16 @@ import { Box, Container } from "@mui/material";
 import type { FC, PropsWithChildren } from "react";
 
 import Footer from "components/Footer";
+import { useRouter } from "next/router";
 import { Header } from "./Header";
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => {
+  const router = useRouter();
+
   return (
-    <Box
-      sx={
-        {
-          // backgroundImage: `url(/images/hero.svg)`,
-          // backgroundRepeat: "no-repeat",
-        }
-      }
-    >
+    <Box>
       <Container maxWidth="xl" sx={{ pt: "26px" }}>
         <Header />
-        {/* <Box
-          maxWidth="1300px"
-          component="section"
-          sx={{ height: "calc(100% - 60px)", margin: "0 auto" }}
-        >
-          {children}
-        </Box> */}
         <Container
           component="section"
           sx={{ height: "calc(100% - 60px)", maxWidth: "1300px" }}
@@ -30,7 +19,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
           {children}
         </Container>
       </Container>
-      <Footer />
+      {router.asPath === "/" && <Footer />}
     </Box>
   );
 };
