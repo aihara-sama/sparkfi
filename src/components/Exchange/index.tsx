@@ -4,10 +4,13 @@ import FilterIcon from "components/icons/FilterIcon";
 import InfoIcon from "components/icons/InfoIcon";
 import SwitchCurrIcon from "components/icons/SwitchCurrIcon";
 import type { FunctionComponent } from "react";
+import { useState } from "react";
 
 interface IEchangeProps {}
 
 const Exchange: FunctionComponent<IEchangeProps> = () => {
+  const [fromCurr, setFromCurr] = useState("SUI");
+  const [toCurr, setTOCurr] = useState("SPAK");
   return (
     <Box>
       <Box
@@ -80,6 +83,7 @@ const Exchange: FunctionComponent<IEchangeProps> = () => {
                   fontSize: 9,
                   fontWeight: 500,
                   mt: "9px",
+                  cursor: "pointer",
                 }}
               >
                 Max
@@ -87,14 +91,15 @@ const Exchange: FunctionComponent<IEchangeProps> = () => {
               <Box>
                 <Select
                   IconComponent={ArrowDownIcon}
-                  value="SUI"
-                  onChange={() => {}}
+                  value={fromCurr}
+                  onChange={(e) => setFromCurr(e.target.value)}
                   sx={{
                     color: "#F5F5F5",
                     background: "#101221 !important",
                     fieldset: {
                       border: "none !important",
                     },
+                    width: "133px !important",
                     pr: 2,
                     ".MuiSelect-select": {
                       py: "10px !important",
@@ -107,15 +112,28 @@ const Exchange: FunctionComponent<IEchangeProps> = () => {
                   }}
                 >
                   <MenuItem
+                    disabled={toCurr === "SUI"}
                     value="SUI"
                     sx={{
-                      // color: "#F5F5F5",
                       display: "flex",
                       alignItems: "center",
                       gap: 1,
                     }}
                   >
-                    <img src="/images/cryptocurrencies/SUI.png" alt="SUI" /> SUI
+                    <img src="/images/cryptocurrencies/SUI.png" alt="SUI" />
+                    SUI
+                  </MenuItem>
+                  <MenuItem
+                    disabled={toCurr === "SPAK"}
+                    value="SPAK"
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                    }}
+                  >
+                    <img src="/images/cryptocurrencies/SPAK.png" alt="SPAK" />
+                    SPAK
                   </MenuItem>
                 </Select>
                 <Typography
@@ -140,9 +158,13 @@ const Exchange: FunctionComponent<IEchangeProps> = () => {
             >
               <Box
                 display="flex"
-                sx={{ background: "#101221" }}
+                sx={{ background: "#101221", cursor: "pointer" }}
                 px={1}
                 py={0.6}
+                onClick={() => {
+                  setFromCurr(toCurr);
+                  setTOCurr(fromCurr);
+                }}
               >
                 <SwitchCurrIcon />
               </Box>
@@ -180,18 +202,20 @@ const Exchange: FunctionComponent<IEchangeProps> = () => {
                   fontSize: 9,
                   fontWeight: 500,
                   mt: "9px",
+                  cursor: "pointer",
                 }}
               >
                 Max
               </Box>
               <Box>
                 <Select
+                  onChange={(e) => setTOCurr(e.target.value)}
                   IconComponent={ArrowDownIcon}
-                  value="SPAK"
-                  onChange={() => {}}
+                  value={toCurr}
                   sx={{
                     color: "#F5F5F5",
                     background: "#101221 !important",
+                    width: "133px !important",
                     fieldset: {
                       border: "none !important",
                     },
@@ -207,9 +231,21 @@ const Exchange: FunctionComponent<IEchangeProps> = () => {
                   }}
                 >
                   <MenuItem
+                    disabled={fromCurr === "SUI"}
+                    value="SUI"
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                    }}
+                  >
+                    <img src="/images/cryptocurrencies/SUI.png" alt="SUI" />
+                    SUI
+                  </MenuItem>
+                  <MenuItem
+                    disabled={fromCurr === "SPAK"}
                     value="SPAK"
                     sx={{
-                      // color: "#F5F5F5",
                       display: "flex",
                       alignItems: "center",
                       gap: 1,
