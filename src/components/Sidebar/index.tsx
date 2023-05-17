@@ -6,6 +6,7 @@ import GithubIcon from "components/icons/social/GithubIcon";
 import MediumIcon from "components/icons/social/MediumIcon";
 import TelegramIcon from "components/icons/social/TelegramIcon";
 import TwitterIcon from "components/icons/social/TwitterIcon";
+import { useRouter } from "next/router";
 import type { FunctionComponent } from "react";
 import MenuLink from "./Link";
 
@@ -28,7 +29,7 @@ const menu: IMenuItem[] = [
   },
   {
     text: "Stake & Farm",
-    link: "/stake-fark",
+    link: "/stake-farm",
   },
   {
     text: "Launchpad",
@@ -41,6 +42,8 @@ const menu: IMenuItem[] = [
 ];
 
 const Sidebar: FunctionComponent = () => {
+  const router = useRouter();
+
   return (
     <Hidden mdDown>
       <Box
@@ -74,7 +77,7 @@ const Sidebar: FunctionComponent = () => {
           </Box>
           {menu.map((item) => (
             <MenuLink
-              isActive={item.link === "/swap"}
+              isActive={router.route === item.link}
               key={item.text}
               link={item.link}
               text={item.text}

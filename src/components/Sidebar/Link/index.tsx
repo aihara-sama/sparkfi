@@ -1,4 +1,5 @@
-import { Box } from "@mui/material";
+import { Link as MuiLink } from "@mui/material";
+import Link from "next/link";
 import type { FunctionComponent } from "react";
 
 interface ILinkProps {
@@ -7,16 +8,19 @@ interface ILinkProps {
   isActive: boolean;
 }
 
-const MenuLink: FunctionComponent<ILinkProps> = ({ text, isActive }) => {
+const MenuLink: FunctionComponent<ILinkProps> = ({ link, text, isActive }) => {
   return (
-    <Box
+    <MuiLink
+      href={link}
+      component={Link}
+      underline="none"
       sx={{
         color: isActive ? "#fff" : "#3A3E5C",
         fontWeight: isActive ? "bold" : 500,
       }}
     >
       {text}
-    </Box>
+    </MuiLink>
   );
 };
 
