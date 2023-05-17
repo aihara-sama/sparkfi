@@ -16,11 +16,12 @@ const HeroSection: FunctionComponent = () => {
         src="/images/hero.svg"
         sx={{
           position: "absolute",
-          top: { xs: 100, md: 0 },
+          top: { xs: -74, sm: 0 },
           left: 0,
           right: 0,
           width: "100%",
           zIndex: -1,
+          height: { xs: "100%", md: "unset" },
           maxHeight: "1500px",
         }}
       ></Box>
@@ -72,8 +73,8 @@ const HeroSection: FunctionComponent = () => {
           sx={{
             background: "#FFF95E !important",
             color: "black !important",
-            py: "35px",
-            px: { xs: "100px", sm: "162px" },
+            py: { xs: "20px", md: "35px" },
+            px: { xs: "0", sm: "162px" },
             fontSize: "20px",
             fontWeight: 500,
             width: { xs: "100%", sm: "inherit" },
