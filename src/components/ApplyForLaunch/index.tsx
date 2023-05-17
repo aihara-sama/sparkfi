@@ -37,11 +37,11 @@ const ApplyForLaunch: FunctionComponent = () => {
           sx={{
             background: "#FFF95E !important",
             color: "black !important",
-            py: "35px",
-            px: { xs: "100px", sm: "162px" },
+            py: { xs: "20px", md: "35px" },
+            px: { xs: "0", md: "162px" },
             fontSize: "20px",
             fontWeight: 500,
-            width: { xs: "100%", sm: "inherit" },
+            width: { xs: "100%", md: "inherit" },
           }}
         >
           Apply for Launch
