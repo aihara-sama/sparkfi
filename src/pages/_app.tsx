@@ -11,7 +11,7 @@ import { Router } from "next/router";
 import nProgress from "nprogress";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { persistor, store } from "store";
+import { GlobalStore, persistor, store } from "store";
 import createEmotionCache from "utils/createEmotionCache";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -35,17 +35,19 @@ function MyApp(props: MyAppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          {() => (
-            <ThemeProvider>
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <CssBaseline />
-                <Toaster />
-                <Component {...pageProps} />
-              </LocalizationProvider>
-            </ThemeProvider>
-          )}
-        </PersistGate>
+        <GlobalStore>
+          <PersistGate loading={null} persistor={persistor}>
+            {() => (
+              <ThemeProvider>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <CssBaseline />
+                  <Toaster />
+                  <Component {...pageProps} />
+                </LocalizationProvider>
+              </ThemeProvider>
+            )}
+          </PersistGate>
+        </GlobalStore>
       </Provider>
     </CacheProvider>
   );

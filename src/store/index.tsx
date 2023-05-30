@@ -4,6 +4,11 @@ import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { appSlice } from "slices/app.slice";
 
+import type { ReactElement, ReactNode } from "react";
+import { createContext, useReducer } from "react";
+import { Reducer } from "store/reducer";
+import type { ContextType, GlobalStateInterface } from "store/types";
+
 export const store = configureStore({
   reducer: persistReducer(
     {
@@ -23,6 +28,27 @@ export const store = configureStore({
       },
     }),
 });
+
+export const globalContext = createContext({} as ContextType);
+export const initialState: GlobalStateInterface = {
+  provider: null,
+  web3: null,
+  account: "",
+};
+
+export function GlobalStore({
+  children,
+}: {
+  children: ReactNode;
+}): ReactElement {
+  const [globalState, dispatch] = useReducer(Reducer, initialState);
+
+  return (
+    <globalContext.Provider value={{ globalState, dispatch }}>
+      {children}
+    </globalContext.Provider>
+  );
+}
 
 export type ApplicationState = {};
 export type RootState = ReturnType<typeof store.getState>;

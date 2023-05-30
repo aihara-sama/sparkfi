@@ -96,7 +96,7 @@ const AllTheProviders: FunctionComponent<IMockAppProps> = ({ children }) => {
   );
 };
 
-const customRender = (
+const customRender: any = (
   ui: ReactElement,
   options?: Omit<RenderOptions, "wrapper"> & { router: Partial<NextRouter> }
 ) => {
